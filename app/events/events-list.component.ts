@@ -3,8 +3,7 @@ import { EventService } from './shared/event.service'
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { ToastrService } from '../common/toastr.service'
 
-@Component({
-  selector: 'events-list',
+@Component({ 
   template: `
   <div>
     <h1>Upcoming Angular 2 Events</h1>
