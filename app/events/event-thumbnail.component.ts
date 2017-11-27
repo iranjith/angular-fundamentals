@@ -13,6 +13,12 @@ import { Component, Input } from '@angular/core'
         <span *ngSwitchDefault>(Normal Start)</span>
       </div>
       <div>Price: \${{event?.price}}</div>
+      <div [ngStyle]="getStartTimeStyle()" [ngSwitch]="event?.time">
+        Time: {{event?.time}}
+        <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+        <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
+        <span *ngSwitchDefault>(Normal Start)</span>
+      </div>
       <div *ngIf="event?.location">
         <span>Location: {{event?.location?.address}}</span>
         <span class="pad-left">{{event?.location?.city}}, {{event?.location?.country}}</span>
@@ -20,6 +26,7 @@ import { Component, Input } from '@angular/core'
       <div *ngIf="event?.onlineUrl">
         Online URL: {{event?.onlineUrl}}
       </div>
+
     </div>
   `,
   styles: [`
